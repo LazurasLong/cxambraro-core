@@ -1,0 +1,45 @@
+body {
+  font-family: "PT Sans", sans-serif;
+}
+.wrapper {
+  text-align: center;
+}
+.container {
+  display: inline-block;
+  width: 900px;
+  height: 700px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+}
+.main-width {
+  width: 880px;
+  padding: 10px;
+}
+.accent-bg {
+  background: lightgray;
+}
+header button {
+  border: 0;
+  background-color: lightgray;
+}
+.position {
+  width: 250px;
+  display: inline-block;
+}
+#output {
+  display: block;
+  text-align: left;
+}
+.to-me::before {
+  content: "→";
+}
+.to-me b {
+  color: blue;
+}
+.to-me b::after {
+  content: ": "
+}
+.from-me::before {
+  content: "←";
+}

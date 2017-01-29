@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>KEKA</title>
+    <link rel="stylesheet" href="core/css/style.css">
+    <link rel="stylesheet" href="core/css/font-awesome-4.7.0/css/font-awesome.css">
+    <script src="core/js/vue/vue.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <header class="accent-bg">
+          <button id="btn-save" title="Сохранить игру">
+            <i class="fa fa-2x fa-save"></i>
+          </button>
+          <button id="btn-bag" title="Узнать информацию о персонаже">
+            <i class="fa fa-2x fa-id-card-o"></i>
+          </button>
+          <button id="btn-chars" title="Узнать информацию о персонажах">
+            <i class="fa fa-2x fa-address-book-o"></i>
+          </button>
+        </header>
+        <div class="main-width" id="world">
+          <img src="img/none.png" class="position" id="position-1">
+          <img src="img/none.png" class="position" id="position-2">
+          <img src="img/none.png" class="position" id="position-3">
+        </div>
+        <div class="main-width accent-bg" id="output">
+        </div>
+        <div class="main-width" id="answers">
+        </div>
+      </div>
+    </div>
+    <script src="core/js/interface.js"></script>
+    <script src="core/js/story-func.js"></script>
+    <script src="story/init.js"></script>
+  </body>
+</html>

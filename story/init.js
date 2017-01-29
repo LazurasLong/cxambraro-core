@@ -1,7 +1,7 @@
 /* Исходная точка любой игровой сессии. Загрузку глав, приветствие и всё такое писать здесь */
 setBg("cavern")
-setChars("ringotect", "narrator", "placeholder")
-toMe("Вейпер какой-то", "Ё, ты тутошний? Го катку одну.")
+setChar("narrator", 2)
+toMe("")
 giveResponses([
   "Довай",
   "Уходи",

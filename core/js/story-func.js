@@ -18,12 +18,9 @@ function setBg(what) {
 
 /* Функции отправки сообщений */
 function toMe(who, text) {
-  let msg = document.createElement("p");
-  msg.className = "to-me";
-  msg.innerHTML = "<b>" + who + "</b>" + text;
-
-  let world = document.getElementById('world');
-  world.appendChild(msg);
+  output.data.messages.push(
+    {text: "<b>" + who + "</b>" + text}
+  )
 };
 function fromMe(text) {
   let msg = document.createElement("p");

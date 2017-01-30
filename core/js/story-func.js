@@ -1,5 +1,12 @@
 /* Основные функции, используемые в играх на Ĉambraro. */
 
+/* Функция, которая обновляет страницу хитро */
+function gen() {
+  for (let i = 0; i < responses.length; i++) {
+    
+  }
+};
+
 /* Функции изменения игрового мира */
 function setChar(what = "none", where = 2) {
   let image = document.getElementById('position-' + where);
@@ -18,42 +25,27 @@ function setBg(what) {
 
 /* Функции отправки сообщений */
 function toMe(who, text) {
-  output.data.messages.push(
-    {text: "<b>" + who + "</b>" + text}
-  )
+  output.push("<p class='to-me'><b>" + who + "</b>" + text + "</p>");
 };
 function fromMe(text) {
-  let msg = document.createElement("p");
-  msg.className = "from-me";
-  msg.innerHTML = text;
-
-  let world = document.getElementById('world');
-  world.appendChild(msg);
+  output.push("<p class='from-me'>" + text + "</p>");
 };
 
 /* Функции ответов игрока */
 function giveResponses(responses) {
-  let answers = document.getElementById("answers");
   for (let i = 0; i < responses.length; i++) {
-    answers.appendChild(
-      "<button onclick='response(" + responses[i] + ")'>" + responses[i] + "</button>"
-    );
+    responses.push("<button onclick='response(" + responses[i] + ")'>" + responses[i] + "</button>");
   };
 };
 function response(text) {
-  let output = document.getElementById("output")
-  output.appendChild(
-    "<p class='from-me'>" + text + "</p>"
-  );
+  fromMe(text)
   trade = text;
 };
 
 /* Функции очистки элементов */
 function clearOutput() {
-  let output = document.getElementById("output");
   output.innerHTML = "";
 };
-function clearAnswers() {
-  let answers = document.getElementById("answers");
-  answers.innerHTML = "";
+function clearResponses() {
+  responses.innerHTML = "";
 };

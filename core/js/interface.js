@@ -2,19 +2,20 @@
 
 /* Кнопки */
 let save = document.getElementById("btn-save");
-let bag = document.getElementById("btn-bag");
-let chars = document.getElementById("btn-chars");
+let info = document.getElementById("btn-info");
 
 save.onclick = function() {
-
+  /* тут будет код того, что будет */
+  /* тут будет алерт с уведомлением о сохранении и само сохранение где-нибудь */
+  /* webstorage мб */
 };
-bag.onclick = function() {
-
-};
-chars.onclick = function() {
-
+info.onclick = function() {
+  /* тут будет код того, что будет*/
+  /* тут откуда-то вылезет див с инфой об игре */
+  /* должна быть либа для этого точно */
 };
 
 /* Всякое на экране */
-var output = [];
-var responses = [];
+var responses = document.getElementById("responses");
+var world = document.getElementById("world");
+var output = document.getElementById("output");

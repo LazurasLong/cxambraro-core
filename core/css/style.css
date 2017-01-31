@@ -27,6 +27,9 @@ header button {
   width: 250px;
   display: inline-block;
 }
+#world {
+  background-position: center;
+}
 #output {
   display: block;
   text-align: left;

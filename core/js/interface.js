@@ -1,13 +1,10 @@
-/* Тут функции интерфейса, которые ещё надо сделать */
-
 /* Кнопки */
 let save = document.getElementById("btn-save");
 let info = document.getElementById("btn-info");
 
 save.onclick = function() {
-  /* тут будет код того, что будет */
-  /* тут будет алерт с уведомлением о сохранении и само сохранение где-нибудь */
-  /* webstorage мб */
+  alert("Ваша игра успешно сохранена.");
+  /* зафигачить сохранение */
 };
 info.onclick = function() {
   /* тут будет код того, что будет*/
@@ -19,3 +16,6 @@ info.onclick = function() {
 var responses = document.getElementById("responses");
 var world = document.getElementById("world");
 var output = document.getElementById("output");
+
+/* Переменная для обмена данными, костыльный путь */
+var trade;

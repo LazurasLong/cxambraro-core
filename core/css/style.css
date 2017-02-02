@@ -34,13 +34,17 @@ header button {
   display: block;
   text-align: left;
 }
+#responses button {
+  display: block;
+}
 .to-me::before {
   content: "→";
 }
-.to-me b {
+.to-me span {
   color: blue;
+  font-weight: bold;
 }
-.to-me b::after {
+.to-me span::after {
   content: ": "
 }
 .from-me::before {

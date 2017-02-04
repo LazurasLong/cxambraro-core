@@ -1,7 +1,19 @@
 /* Исходная точка любой игровой сессии. Загрузку глав, приветствие и всё такое писать здесь */
 setBg("cavern")
 setChar("narrator")
-setChar("narrator", 1)
-removeChar(2)
-toMe("Keka", "do ya kek lol")
-setResponse("Nice kek out there")
+listen("Какой-то хипстер", "Никогда тебя здесь не видел. Ты кто по масти? Есть два смурфа...")
+setResponses([
+  "Ты кто?", 0,
+  "Я по масти герой, а смурфа выберет другой.", 0,
+  "Пшол вон гад яя тя не знаю", 1
+])
+function hero() {
+  listen("Какой-то хипстер", "WRYYYYYY MUDAMUDAMUDA")
+}
+function angry() {
+  listen("Какой-то хипстер", "YARE YARE")
+}
+var bicycle = [
+  "hero()",
+  "angry()"
+]

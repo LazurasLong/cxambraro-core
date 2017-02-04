@@ -3,7 +3,7 @@
 /* Функции изменения игрового мира */
 function setChar(what = "none", where = 2) {
   let image = document.getElementById('position-' + where);
-  image.src = "img/char/" + what + ".png"
+  image.src = `img/char/${what}.png`;
 };
 function setChars(first = "none", second = "none", third = "none") {
   setChar(first, 1);
@@ -11,7 +11,7 @@ function setChars(first = "none", second = "none", third = "none") {
   setChar(third, 3);
 };
 function setBg(what) {
-  world.style.backgroundImage = "url(img/bg/" + what + ".png)";
+  world.style.backgroundImage = `url(img/bg/${what}.png)`;
 };
 function removeChar(where = 2) {
   setChar(undefined, where);
@@ -19,13 +19,11 @@ function removeChar(where = 2) {
 
 /* Функции отправки сообщений */
 function listen(who, text) {
-  let msg = document.createElement("p");
-  msg.className = "to-me";
-  msg.innerHTML = "<span>" + who + "</span>" + text;
-  output.appendChild(msg);
+  let msg = `<p class="to-me"><span>${who}</span>${text}</p>`;
+  output.innerHTML += msg;
 };
 function say(text) {
-  let msg = "<p class='from-me'>" + text + "</p>"
+  let msg = `<p class="from-me">${text}</p>`;
   output.innerHTML += msg;
 };
 
@@ -35,12 +33,15 @@ function setResponse(text) {
   responses.innerHTML += btn;
 };
 function setResponses(resps) {
-
+  for (var i = 0; i < resps.length; i + 2) {
+    setResponse(resps[i], resps[i + 1]);
+  };
 };
-function response(text) {
+function response(text, doWhat) {
   say(text);
   clearResponses();
   trade = text;
+  eval(bicycle[doWhat]);
 };
 
 /* Функции очистки элементов */

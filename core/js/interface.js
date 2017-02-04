@@ -14,6 +14,7 @@ info.onclick = function() {
 
 /* Всякое на экране */
 var responses = document.getElementById("responses");
+var responsesBtns = document.querySelectorAll("responses btn");
 var world = document.getElementById("world");
 var output = document.getElementById("output");
 

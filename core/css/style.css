@@ -38,7 +38,7 @@ header button {
   display: block;
 }
 .to-me::before {
-  content: "→";
+  content: "→ ";
 }
 .to-me span {
   color: blue;
@@ -48,5 +48,5 @@ header button {
   content: ": "
 }
 .from-me::before {
-  content: "←";
+  content: "← ";
 }

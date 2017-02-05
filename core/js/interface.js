@@ -13,9 +13,9 @@ info.onclick = function() {
 };
 
 /* Всякое на экране */
-var responses = $("#responses");
-var world = $("#world");
-var output = $("#output");
+var responses = $("#responses")
+var world = $("#world")
+var output = $("#output")
 
 /* Переменная для обмена данными, костыльный путь */
-var trade;
+var trade

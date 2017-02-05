@@ -1,53 +1,62 @@
-/* Основные функции, используемые в играх на Ĉambraro. */
+/*
+  Main functions used in Ĉambraro games.
+  Functions have short names because typing them lots of times is pain.
+  Dont even mention auto-completion.
+  Name origins are mentioned after function declaration.
+*/
+/*
+  Function list
+  sc & scs & rmc
+  bg
+  l & s
+  r
+  co & cr
+*/
 
-/* Функции изменения игрового мира */
-function setChar(what = "none", where = 2) {
-  let image = document.getElementById('position-' + where);
-  image.src = `img/char/${what}.png`;
-};
-function setChars(first = "none", second = "none", third = "none") {
-  setChar(first, 1);
-  setChar(second, 2);
-  setChar(third, 3);
-};
-function setBg(what) {
-  world.style.backgroundImage = `url(img/bg/${what}.png)`;
-};
-function removeChar(where = 2) {
-  setChar(undefined, where);
-};
+/* Gameworld-changing functions */
+function sc(what = "none", where = 2) {
+  $("#position-" + where).attr("src", `img/char/${what}.png`)
+}// Set Character
+function scs(first = "none", second = "none", third = "none") {
+  sc(first, 1)
+  sc(second, 2)
+  sc(third, 3)
+}// Set CharacterS
+function bg(what) {
+  world.css("backgroundImage", `url(img/bg/${what}.png)`)
+}// set BackGround
+function rmc(where = 2) {
+  setChar(undefined, where)
+}// ReMove Character
 
-/* Функции отправки сообщений */
-function listen(who, text) {
-  let msg = `<p class="to-me"><span>${who}</span>${text}</p>`;
-  output.innerHTML += msg;
-};
-function say(text) {
-  let msg = `<p class="from-me">${text}</p>`;
-  output.innerHTML += msg;
-};
+/* Message-sending functions */
+function l(who, text) {
+  output.append(`<p class="to-me"><span>${who}</span>${text}</p>`)
+}// Listen
+function s(text) {
+  output.append(`<p class="from-me">${text}</p>`)
+}// Say
 
-/* Функции обратной связи с игроком */
-function setResponse(text) {
-  let btn = `<button onclick="response('${text}')">${text}</button>`;
-  responses.innerHTML += btn;
-};
-function setResponses(resps) {
-  for (var i = 0; i < resps.length; i + 2) {
-    setResponse(resps[i], resps[i + 1]);
-  };
-};
-function response(text, doWhat) {
-  say(text);
-  clearResponses();
-  trade = text;
-  eval(bicycle[doWhat]);
-};
+/* Player-response functions */
+function response(text) {
+  s(text)
+  cr()
+  trade = text
+}// made for r()
+function r(resps) {
+  for (var i = 0; i < resps.length; i = i + 2) {
+    responses.append(
+      `<button onclick="response('${resps[i]}');${resps[i + 1]}()">
+        ${resps[i]}
+      </button>`
+    )
+  }
+}// set Responses
 
-/* Функции очистки элементов */
-function clearOutput() {
-  output.innerHTML = "";
-};
-function clearResponses() {
-  responses.innerHTML = "";
-};
+/* Elements-clearing functions */
+function co() {
+  output.html("")
+}// Clear Output
+function cr() {
+  responses.html("")
+}// Clear Responses

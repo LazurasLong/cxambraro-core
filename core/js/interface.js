@@ -1,6 +1,6 @@
 /* Кнопки */
-let save = document.getElementById("btn-save");
-let info = document.getElementById("btn-info");
+let save = document.getElementById("btn-save")
+let info = document.getElementById("btn-info")
 
 save.onclick = function() {
   alert("Ваша игра успешно сохранена.");
@@ -13,10 +13,9 @@ info.onclick = function() {
 };
 
 /* Всякое на экране */
-var responses = document.getElementById("responses");
-var responsesBtns = document.querySelectorAll("responses btn");
-var world = document.getElementById("world");
-var output = document.getElementById("output");
+var responses = $("#responses");
+var world = $("#world");
+var output = $("#output");
 
 /* Переменная для обмена данными, костыльный путь */
 var trade;

@@ -14,35 +14,42 @@
 */
 
 /* Gameworld-changing functions */
+
 function sc(what = "none", where = 2) {
   $("#position-" + where).attr("src", `img/char/${what}.png`)
 }// Set Character
+
 function scs(first = "none", second = "none", third = "none") {
   sc(first, 1)
   sc(second, 2)
   sc(third, 3)
 }// Set CharacterS
-function bg(what) {
+
+function bg(what = "none") {
   world.css("backgroundImage", `url(img/bg/${what}.png)`)
 }// set BackGround
+
 function rmc(where = 2) {
-  setChar(undefined, where)
+  sc(undefined, where)
 }// ReMove Character
 
 /* Message-sending functions */
+
 function l(who, text) {
   output.append(`<p class="to-me"><span>${who}</span>${text}</p>`)
 }// Listen
+
 function s(text) {
   output.append(`<p class="from-me">${text}</p>`)
 }// Say
 
 /* Player-response functions */
+
 function response(text) {
   s(text)
   cr()
-  trade = text
 }// made for r()
+
 function r(resps) {
   for (var i = 0; i < resps.length; i = i + 2) {
     responses.append(
@@ -54,9 +61,17 @@ function r(resps) {
 }// set Responses
 
 /* Elements-clearing functions */
+
 function co() {
   output.html("")
 }// Clear Output
+
 function cr() {
   responses.html("")
 }// Clear Responses
+
+function ca() {
+  co()
+  scs()
+  bg()
+}// Clear All

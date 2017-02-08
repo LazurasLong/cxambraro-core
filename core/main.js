@@ -1,11 +1,15 @@
+/* Vars for main elements. */
+var responses = $("#responses")
+var world = $("#world")
+var output = $("#output")
+
 /*
   Main functions used in Ĉambraro games.
   Functions have short names because typing them lots of times is pain.
   Dont even mention auto-completion.
   Name origins are mentioned after function declaration.
-*/
-/*
-  Function list
+
+  Functions list
   sc & scs & rmc
   bg
   l & s

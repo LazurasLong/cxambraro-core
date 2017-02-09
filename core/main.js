@@ -6,7 +6,7 @@ var output = $("#output")
 /*
   Main functions used in Ĉambraro games.
   Functions have short names because typing them lots of times is pain.
-  Dont even mention auto-completion.
+  Don't even mention auto-completion.
   Name origins are mentioned after function declaration.
 
   Functions list
@@ -49,20 +49,26 @@ function s(text) {
 
 /* Player-response functions */
 
-function response(text) {
+function genResponse(text, scene) {
+  return `<button onclick='response("${text}", ${scene})'>
+  ${text}</button>`
+}// made for r()
+
+function response(text, scene) {
   s(text)
   cr()
+  scene()
 }// made for r()
 
 function r(resps) {
   for (var i = 0; i < resps.length; i = i + 2) {
     responses.append(
-      `<button onclick="response('${resps[i]}');${resps[i + 1]}()">
-        ${resps[i]}
-      </button>`
+      genResponse(resps[i], resps[i + 1])
     )
   }
 }// set Responses
+//  WARN:
+//  If you use ', button won't work. Just don't use it, try this — ’
 
 /* Elements-clearing functions */
 

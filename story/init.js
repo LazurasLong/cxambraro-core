@@ -21,7 +21,9 @@ function gtfo() {
 }
 
 function borkersBizzareAdventure() {
-  l("birdo", "now is da time. ahem. boooi, everybody do DA BORK.")
-  l("birdo", "<i>BORK</i>")
+  l("birdo", [
+    "now is da time. ahem. boooi, everybody do DA BORK.",
+    "<i>BORK</i>"
+  ])
   s("wtf r u")
 }

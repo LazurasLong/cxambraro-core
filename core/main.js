@@ -40,7 +40,13 @@ function rmc(where = 2) {
 /* Message-sending functions */
 
 function l(who, text) {
-  output.append(`<p class="to-me"><span>${who}</span>${text}</p>`)
+  if (Array.isArray(text)) {
+    for (let i = 0; i < text.length; i++) {
+      output.append(`<p class="to-me"><span>${who}</span>${text[i]}</p>`)
+    }
+  } else {
+    output.append(`<p class="to-me"><span>${who}</span>${text}</p>`)
+  }
 }// Listen
 
 function s(text) {

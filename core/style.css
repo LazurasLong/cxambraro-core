@@ -9,7 +9,6 @@ body {
   width: 900px;
   height: 600px;
   background: white;
-  border-radius: 5px;
   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
 }
 .main-width {
@@ -36,6 +35,15 @@ header button {
 }
 #responses button {
   display: block;
+  background-color: lightgray;
+  border: 0;
+  padding: 10px;
+  margin: 0 auto;
+}
+#responses button:hover {
+  background-color: white;
+  border: 1px solid lightgray;
+  padding: 8px;
 }
 .to-me::before {
   content: "→ ";

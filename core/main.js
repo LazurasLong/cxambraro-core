@@ -12,9 +12,10 @@ var output = $("#output")
   Functions list
   sc & scs & rmc
   bg
-  l & s
   r
   co & cr
+  dc
+  l & s
 */
 
 /* Gameworld-changing functions */
@@ -37,17 +38,40 @@ function rmc(where = 2) {
   sc(undefined, where)
 }// ReMove Character
 
-/* Message-sending functions */
+/* Elements-clearing functions */
 
-function l(who, text) {
-  if (Array.isArray(text)) {
-    for (let i = 0; i < text.length; i++) {
-      output.append(`<p class="to-me"><span>${who}</span>${text[i]}</p>`)
+function co() {
+  output.html("")
+}// Clear Output
+
+function cr() {
+  responses.html("")
+}// Clear Responses
+
+function ca() {
+  co()
+  scs()
+  bg()
+}// Clear All
+
+
+var Character = function(who, color) {
+  this.l = function(text) {
+    if (Array.isArray(text)) {
+      for (let i = 0; i < text.length; i++) {
+        output.append(
+          `<p class="to-me"><span style="color:${color}">${who}</span>${text[i]}</p>`
+        )
+      }
+    } else {
+      output.append(
+        `<p class="to-me"><span style="color:${color}">${who}</span>${text}</p>`
+      )
     }
-  } else {
-    output.append(`<p class="to-me"><span>${who}</span>${text}</p>`)
-  }
-}// Listen
+  }// Listen
+}
+
+/* Message-sending functions */
 
 function s(text) {
   output.append(`<p class="from-me">${text}</p>`)
@@ -75,19 +99,3 @@ function r(resps) {
 }// set Responses
 //  WARN:
 //  If you use ', button won't work. Just don't use it, try this — ’
-
-/* Elements-clearing functions */
-
-function co() {
-  output.html("")
-}// Clear Output
-
-function cr() {
-  responses.html("")
-}// Clear Responses
-
-function ca() {
-  co()
-  scs()
-  bg()
-}// Clear All

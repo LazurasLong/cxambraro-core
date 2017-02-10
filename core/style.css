@@ -16,7 +16,7 @@ body {
   padding: 10px;
 }
 .accent-bg {
-  background: lightgray;
+  background-color: lightgray;
 }
 header button {
   border: 0;
@@ -49,7 +49,6 @@ header button {
   content: "→ ";
 }
 .to-me span {
-  color: blue;
   font-weight: bold;
 }
 .to-me span::after {

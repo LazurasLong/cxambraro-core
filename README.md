@@ -1,22 +1,34 @@
 # Ĉambraro
-Engine for visual novels or text quests on JS.
+Engine for visual novels or text quests on JavaScript.
 
 ## Installing
 Make following directory:
 ```js
-game-name/
-  img/
-    bg/
-      none.png
-    char/
-      none.png
-  story/
-    init.js
-  game-name.html
+game-name/       // Your game folder
+  img/           // Images folder
+    bg/          // Backgrounds
+      none.png   // Transparent image
+    char/        // Characters
+      none.png   // Transparent image
+  story/         // Your story
+    init.js      // Starting story
+  custom.css     // Your custom CSS and plugins' styles
+  custom.js      // Your custom JS and plugins' scripts
+  game-name.html // User Interface
 ```
 
-It would be enough for browser version. If you are running game locally, copy folder core/ from repo.
+This basic setup can be downloaded here: with comments (coming soon), without comments (coming soon too).
 
-Copy contents of index.html from repo into game-name.html (you can remove comments if you want). Launch and see nothing. Cool.
+If you are going to run game locally or if you have unstable internet conection, download `core/` folder here (coming soon).
 
-If you will use plugins (coming soon), add custom.js and custom.css into game-name/.
+## Basic usage
+
+Basic knowledge of JS is highly recommended, but not necessary.
+
+Open init.js with your favorite text editor (I personally recommend [Atom](https://atom.io/) by GitHub, Ĉambraro is coded in it). Try functions below:
+
+```js
+s("Hello world!") // Say "Hello world!"
+world = new Character("name", "color") // Create new character with this name and that color
+world.l("Hello you too.") // Listen what World says
+```

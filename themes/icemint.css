@@ -1,0 +1,26 @@
+/*
+Color palette:
+#92cc9f
+#acdbb6
+#c0f2cb
+#d4f4db
+#e2fde9
+http://www.color-hex.com/color-palette/31864
+*/
+body {
+  background-color: #e2fde9;
+}
+.container {
+  background-color: #d4f4db;
+  box-shadow: 0px 0px 15px 0px rgba(192,242,203,0.75);
+}
+.accent-bg {
+  background-color: #acdbb6;
+}
+#responses button {
+  background-color: #acdbb6;
+}
+#responses button:hover {
+  background-color: #d4f4db;
+  border-color: #acdbb6
+}

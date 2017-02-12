@@ -19,6 +19,10 @@ function borkTheHedgehog() {
 
 function gtfo() {
   birdo.l("u kek. gtfo plz")
+  r([
+    "But I do not want to!", "teamup",
+    "k", "gtfo"
+  ])
 }
 
 function borkersBizzareAdventure() {
@@ -27,4 +31,10 @@ function borkersBizzareAdventure() {
     "<i>BORK</i>"
   ])
   s("wtf r u")
+}
+
+function teamup() {
+  sc("birdo", 1)
+  birdo.l("waddup m8")
+  birdo.l("dats mah bro m8. go out now")
 }

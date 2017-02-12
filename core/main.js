@@ -3,25 +3,25 @@ var responses = $("#responses")
 var world = $("#world")
 var output = $("#output")
 
+/* Animations vars
+   Used in animations, can be changed anytime */
+var charFx = "ExpandInBounce"
+var tomeFx = "StampIn"
+var frommeFx = "StampIn"
+
 /*
   Main functions used in Ĉambraro games.
   Functions have short names because typing them lots of times is pain.
   Don't even mention auto-completion.
   Name origins are mentioned after function declaration.
-
-  Functions list
-  sc & scs & rmc
-  bg
-  r
-  co & cr
-  dc
-  l & s
 */
 
 /* Gameworld-changing functions */
 
 function sc(what = "none", where = 2) {
-  $("#position-" + where).attr("src", `img/char/${what}.png`)
+  $("#position-" + where)
+    .attr("src", `img/char/${what}.png`)
+    .addClass(`animated td${charFx}`)
 }// Set Character
 
 function scs(first = "none", second = "none", third = "none") {
@@ -34,9 +34,9 @@ function bg(what = "none") {
   world.css("backgroundImage", `url(img/bg/${what}.png)`)
 }// set BackGround
 
-function rmc(where = 2) {
+function rc(where = 2) {
   sc(undefined, where)
-}// ReMove Character
+}// Remove Character
 
 /* Elements-clearing functions */
 
@@ -44,28 +44,25 @@ function co() {
   output.html("")
 }// Clear Output
 
-function cr() {
-  responses.html("")
-}// Clear Responses
-
 function ca() {
   co()
   scs()
   bg()
 }// Clear All
 
-
 var Character = function(who, color) {
   this.l = function(text) {
     if (Array.isArray(text)) {
       for (let i = 0; i < text.length; i++) {
         output.append(
-          `<p class="to-me"><span style="color:${color}">${who}</span>${text[i]}</p>`
+          `<p class="to-me animated td${tomeFx}"><span style="color:${color}">
+          ${who}</span>${text[i]}</p>`
         )
       }
     } else {
       output.append(
-        `<p class="to-me"><span style="color:${color}">${who}</span>${text}</p>`
+        `<p class="to-me animated td${tomeFx}"><span style="color:${color}">
+        ${who}</span>${text}</p>`
       )
     }
   }// Listen
@@ -74,7 +71,7 @@ var Character = function(who, color) {
 /* Message-sending functions */
 
 function s(text) {
-  output.append(`<p class="from-me">${text}</p>`)
+  output.append(`<p class="from-me animated td${frommeFx}">${text}</p>`)
 }// Say
 
 /* Player-response functions */
@@ -86,7 +83,7 @@ function genResponse(text, scene) {
 
 function response(text, scene) {
   s(text)
-  cr()
+  responses.html("")
   scene()
 }// made for r()
 

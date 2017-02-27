@@ -5,22 +5,35 @@ Color palette:
 #c0f2cb
 #d4f4db
 #e2fde9
-http://www.color-hex.com/color-palette/31864
+from http://www.color-hex.com/color-palette/31864
 */
 body {
   background-color: #e2fde9;
 }
-.container {
+.cxambraro__container {
   background-color: #d4f4db;
   box-shadow: 0px 0px 15px 0px rgba(192,242,203,0.75);
 }
-.accent-bg {
+.default-accent {
   background-color: #acdbb6;
+  border: 5px solid #92cc9f;
 }
-#responses button {
+.controls__button {
   background-color: #acdbb6;
+  border: 0;
+  padding: 10px;
+  display: block;
 }
-#responses button:hover {
-  background-color: #d4f4db;
-  border-color: #acdbb6
+.controls__button:hover {
+  background-color: #c0f2cb;
+  border: 0;
+}
+.panel__button {
+  background-color: #acdbb6;
+  border: 0;
+  padding: 10px;
+}
+.panel__button:hover {
+  background-color: #c0f2cb;
+  border: 0;
 }
